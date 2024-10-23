@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css"> <!-- Link to your custom CSS -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>Bob's Bistro</title>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        function Header() {
+            return (
+                <header>
+            <nav className="navbar navbar-expand-lg navbar-dark bg-info"> {/* Add navbar-dark and bg-dark classes here */}
+                        <a className="navbar-brand" href="#">
+                            <i className="fa-brands fa-react" style={{ color: '#61DAFB' }}></i> Bob's Bistro                        </a>
+                        <button className="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                            <span className="navbar-toggler-icon"></span>
+                        </button>
+                        <div className="collapse navbar-collapse" id="navbarNavDropdown">
+                            <ul className="navbar-nav mr-auto"> {/* Aligns items to the left */}
+                                <li className="nav-item"><a className="nav-link" href="#">Pricing</a></li>
+                                <li className="nav-item"><a className="nav-link" href="#">About</a></li>
+                                <li className="nav-item"><a className="nav-link" href="#">Contact</a></li>
+                            </ul>
+                            <form className="form-inline my-2 my-lg-0"> {/* Search bar on the right */}
+                                <input className="form-control mr-sm-2" type="search" placeholder="Search"
+                                       aria-label="Search"/>
+                                <button className="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+                            </form>
+                        </div>
+                    </nav>
+                </header>
+            );
+        }
+
+        const FunFacts = () => {
+            return (
+                <div className="fun-facts mt-4">
+                    <h1>Fun Facts about React</h1>
+                    <ul className="list-group">
+                        <li className="list-group-item">Was first released in 2013</li>
+                        <li className="list-group-item">Was originally created by Jordan Walke</li>
+                        <li className="list-group-item">Has well over 100k stars on GitHub</li>
+                        <li className="list-group-item">Is maintained by Facebook</li>
+                        <li className="list-group-item">Powers thousands of enterprise apps including mobile apps</li>
+                    </ul>
+                </div>
+            );
+        };
+
+        const ReasonsILoveReact = () => {
+            return (
+                <div className="reasons mt-4">
+                    <h1>My Awesome Website in React</h1>
+                    <h3>Reasons I Love React</h3>
+                    <ol>
+                        <li>It's composable</li>
+                        <li>It's declarative</li>
+                        <li>It's a hireable skill</li>
+                        <li>It's actively maintained by skilled people</li>
+                    </ol>
+                </div>
+            );
+        };
+
+        function Footer() {
+            return (
+                <footer className="bg-dark text-white text-center py-3">
+                    <small>© 2021 Ziroll development. All rights reserved.</small>
+                </footer>
+            );
+        }
+
+        function App() {
+            return (
+                <div className="container">
+                    <Header />
+                    <FunFacts />
+                    <ReasonsILoveReact />
+                    <Footer />
+                </div>
+            );
+        }
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>
